@@ -4,7 +4,7 @@ Para iniciar o modulo go no projeto, rode o comando:
 
 ```bash
 go mod init github.com/lrs-rodrigues/estudo-golang
-go mod tiny
+go mod tidy
 ```
 
 ## Adicionar modulos 
