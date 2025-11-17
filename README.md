@@ -3,14 +3,22 @@
 Para iniciar o modulo go no projeto, rode o comando:
 
 ```bash
-go mod tidy
+go mod init github.com/lrs-rodrigues/estudo-golang
+go mod tiny
+```
+
+## Adicionar modulos 
+```bash 
+go get github.com/go-chi/chi/v5
+go get github.com/go-playground/validator/v10
+go github.com/lib/pq 
 ```
 
 ## Subir Postgres
 
 ```bash
 docker run --name pg -e POSTGRES_PASSWORD=pass -e POSTGRES_USER=user \
-  -e POSTGRES_DB=myapp -p 5432:5432 -d postgres:18
+  -e POSTGRES_DB=postgres -p 5432:5432 -d postgres:18
 ```
 
 ## Criar tabela
@@ -34,4 +42,10 @@ export DATABASE_URL="postgres://user:pass@localhost:5432/postgres?sslmode=disabl
 
 ```bash
 go run ./cmd/api
+```
+
+## Rodar testes
+
+```bash
+go test ./...
 ```

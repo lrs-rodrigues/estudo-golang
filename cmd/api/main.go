@@ -13,7 +13,7 @@ import (
 	"github.com/go-chi/chi/v5/middleware"
 	adapterhttp "github.com/lrs-rodrigues/estudo-golang/internal/adapter/http"
 	"github.com/lrs-rodrigues/estudo-golang/internal/infra/postgres"
-	"github.com/lrs-rodrigues/estudo-golang/internal/services"
+	"github.com/lrs-rodrigues/estudo-golang/internal/service"
 )
 
 func main() {
@@ -39,7 +39,7 @@ func main() {
 	router.Use(middleware.Recoverer)
 
 	userRepo := postgres.NewUserRepositoryPostgres(db)
-	userService := services.NewUserService(userRepo)
+	userService := service.NewUserService(userRepo)
 	userHandler := adapterhttp.NewUserHandler(userService)
 
 	userHandler.RegisterRoutes(router)
